@@ -18,9 +18,9 @@ export default {
 	#filter {
 		display: flex;
 		flex-direction: column;
-		padding: 80px;
+		padding: 40px;
 		min-height: 100vh;
-		min-width: 150px;
+		min-width: 285px;
 		max-width: 150px;
 		flex-grow: 1;
 		background-color: #B65F5F;
