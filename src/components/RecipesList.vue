@@ -19,13 +19,13 @@ export default {
 		};
 	},
 	computed: {
-		// recipes() {
-		// 	return this.$store.getters.getRecipes;
-		// },
+		recipes() {
+			return this.$store.getters.getRecipes;
+		},
 	},
-	created () {
-		this.recipes = this.$store.getters.getRecipes;
-	},
+	// created () {
+	// 	this.recipes = this.$store.getters.getRecipes;
+	// },
 };
 </script>
 

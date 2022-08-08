@@ -4,10 +4,12 @@
   <div class="description">
     <div class="basic-info">
         <h3> {{recipe.Naziv}} </h3>
-        <span>{{recipe.BrMin}} </span>
+        <span>{{recipe.BrMin }} <font-awesome-icon icon="stopwatch" /> </span>
+		 <span :style="{color: getVeganColor()}"><font-awesome-icon icon="leaf" /></span>
     </div>
     <p>Broj Kalorija: {{recipe.BrKalorija}}</p>
     <p>Cijena pripreme: {{recipe.CijenaNamirnica}}</p>
+	<p1>{{recipe.KratkiOpis}}</p1>
   </div>
   </div>
 </template>
@@ -20,6 +22,14 @@ export default {
             defaulut: () => {}
         },
     },
+	methods: {
+		getVeganColor (){
+			if(this.recipe.VrstaPrehrane == 'Veganska' ) return "#00e600";
+			if(this.recipe.VrstaPrehrane == 'veganska' ) return "#00e600";
+			
+			return "#909090";
+		}
+	}
 };
 </script>
 
@@ -36,7 +46,7 @@ export default {
 			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.473),
 				0 10px 10px rgba(0, 0, 0, 0.473);
 			margin-bottom: 7px;
-			border-radius: 15px;
+			border-radius: 20px;
 			cursor: pointer;
 		}
 
@@ -65,6 +75,11 @@ export default {
 				margin: 5px 0;
 				color: rgb(143, 143, 143);
 				text-align: left;
+			}
+			p1 {
+				margin: 5px 10;
+				color: rgb(0, 0, 0);
+				text-align: center;
 			}
 		}
 	}

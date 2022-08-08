@@ -7,6 +7,7 @@ export default
         BrKalorija: 130,
         CijenaNamirnica: '20 kn', 
         slika: 'https://www.recetin.com/wp-content/uploads/2015/05/pizza_hawaiana.jpg',
+        VrstaPrehrane: 'Veganska',
         Sastojci: [
             {Naziv: 'Brašno 450g'},
             {Naziv: 'Kvasac 4g'},
@@ -20,11 +21,12 @@ export default
     },
     {
         id: 2,
-        Naziv: 'Pizza Capricciosa',
-        BrMin: 30,
-        BrKalorija: 130,
-        CijenaNamirnica: '20 kn', 
-        slika: 'https://www.recetin.com/wp-content/uploads/2015/05/pizza_hawaiana.jpg',
+        Naziv: 'Špageti carbonara',
+        BrMin: 25,
+        BrKalorija: 80,
+        CijenaNamirnica: '15 kn', 
+        slika: 'https://www.tportal.hr/media/thumbnail/w1000/716201.jpeg',
+        VrstaPrehrane: 'veganska',
         Sastojci: [
             {Naziv: 'Brašno 450g'},
             {Naziv: 'Kvasac 4g'},
@@ -34,7 +36,7 @@ export default
             {Naziv: 'Šunka 300g'},
             {Naziv: 'Sir 300g'},
         ],
-        KratkiOpis: 'Pizza je vrsta jela koje potječe iz talijanske kuhinje, a koja se sastoji od tankog, najčešće okruglog tijesta premazanog umakom od rajčice, na koje se zatim stavljaju razni dodatci, prije svega sir, a zatim se peče u krušnoj peći.',
+        KratkiOpis: 'Špageti (spaghetti) carbonara klasik su tradicionalne talijanske kuhinje koji naprosto obožavamo! Često se za klasična jela vode polemike oko izvornih namirnica i načina pripreme.',
     },
     {
         id: 3,

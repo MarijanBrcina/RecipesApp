@@ -4,7 +4,10 @@
         <h2>RecipesApp</h2>
 		<button>Dodaj recept</button>
         <div>
-            <input type="text" placeholder="Pretraži recepte "/>
+            <input 
+			v-model="search"
+			type="text" 
+			placeholder="Pretraži recepte "/>
         </div>
     </div>
 </div>
@@ -12,8 +15,17 @@
 
 <script>
 export default {
-
-}
+	data(){
+		return{
+			search: "",
+		};
+	},
+	watch: {
+		search(){
+			this.$store.dispatch("search", this.search);
+		}
+	}
+};
 </script>
 
 <style lang='scss' scoped>
