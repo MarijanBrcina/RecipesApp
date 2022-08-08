@@ -1,6 +1,5 @@
 <template>
 <div id="recipes-container">
-    <!-- Lista recepata -->
 
 	<recipe-card v-for="recipe in recipes" :key="recipe.id" :recipe="recipe" />
 </div>

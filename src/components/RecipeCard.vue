@@ -24,8 +24,8 @@ export default {
     },
 	methods: {
 		getVeganColor (){
-			if(this.recipe.VrstaPrehrane == 'Veganska' ) return "#00e600";
-			if(this.recipe.VrstaPrehrane == 'veganska' ) return "#00e600";
+			if(this.recipe.VegePrehrana == 'Da' ) return "#00e600";
+			if(this.recipe.VegePrehrana == 'da' ) return "#00e600";
 			
 			return "#909090";
 		}
