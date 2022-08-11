@@ -6,7 +6,13 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView
-  }
+  },
+  {
+    path: '/pregled-recepta/:id',
+    name: 'PregledRecepta',
+    component: () => import('../views/PregledRecepta'),
+    props: true
+  },
 ]
 
 const router = createRouter({

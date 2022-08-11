@@ -34,6 +34,9 @@ const getters = {
         return state.recipes
         .filter(recipes => recipes.Naziv.toLowerCase().indexOf(state.search.toLowerCase()) > -1)
         .sort(compare(state.filter))
+    },
+    getRecipeWithId: state => id => {
+        return state.recipes.find(recipe => recipe.id === id)
     }
 }
 

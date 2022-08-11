@@ -1,6 +1,6 @@
 <template>
 <div class="recipe">
-  <img :src="recipe.slika" alt="Slika recepta">
+  <img :src="recipe.slika" alt="Slika recepta" @click="openDetails">
   <div class="description">
     <div class="basic-info">
         <h3> {{recipe.Naziv}} </h3>
@@ -28,8 +28,14 @@ export default {
 			if(this.recipe.VegePrehrana == 'da' ) return "#00e600";
 			
 			return "#909090";
-		}
-	}
+		},
+		openDetails() {
+			this.$router.push({
+				name: "PregledRecepta",
+				params: {id: this.recipe.id},
+			});
+		},
+	},
 };
 </script>
 

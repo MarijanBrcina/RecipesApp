@@ -8,7 +8,6 @@ export default
         CijenaNamirnica: '20 kn', 
         slika: 'https://www.recetin.com/wp-content/uploads/2015/05/pizza_hawaiana.jpg',
         VegePrehrana: 'Da',
-        VrstaObroka: 'Glavno jelo',
         Sastojci: [
             {Naziv: 'Brašno 450g'},
             {Naziv: 'Kvasac 4g'},
@@ -17,6 +16,13 @@ export default
             {Naziv: 'Umak za pizzu'},
             {Naziv: 'Šunka 300g'},
             {Naziv: 'Sir 300g'},
+        ],
+        Priprema: [
+            {korak: '1. - Kvasac razmutite u malo tople vode, dodajte šećer i pustite da odstoji oko 5 minuta na toplom mjestu.'},
+            {korak: '2. - Brašnu dodajte sol, ulje, dignuti kvasac te dodajući toplu vodu umijesite mekano tijesto. Pokriveno tijesto ostavite dizati na toplom mjestu dok se volumen ne udvostruči (oko 30 minuta).'},
+            {korak: '3. - Dignuto tijesto razvaljajte na veličinu kalupa (2 okrugla kalupa ili 1 originalni lim iz pećnice).'},
+            {korak: '4. - Tijesto premažite ketchupom i pospite sirom. Po tijestu rasporedite šunku, šampinjone narezane na listiće, papriku narezanu na štapiće i masline.'},
+            {korak: '5. - Pizzu pecite oko 10 minuta na temperaturi od 250 °C.'},
         ],
         KratkiOpis: 'Pizza je vrsta jela koje potječe iz talijanske kuhinje, a koja se sastoji od tankog, najčešće okruglog tijesta premazanog umakom od rajčice, na koje se zatim stavljaju razni dodatci, prije svega sir, a zatim se peče u krušnoj peći.',
     },
@@ -37,6 +43,13 @@ export default
             {Naziv: 'Šunka 300g'},
             {Naziv: 'Sir 300g'},
         ],
+        Priprema: [
+            {korak: '1. - U lonac s vodom staviti malo soli i maslinovog ulja. Ubaciti špagete u lonac i kuhati dok ne budu gotovi.'},
+            {korak: '2. - U međuvremenu pripremiti umak za špagete. U posudu izmješati vrhnje za kuhanje, usitnjeni sir, narezani češnjak, peršin, žličicu Vegete, malo soli i dva jaja. Dobro miješati dok ne bude ujednačeno. '},
+            {korak: '3. - U tavu staviti maslinovog ulja i ubaciti narezane slanine/pancete/pršuta. Malo začiniti vegetom dok se peče i na kraju gotov sadržaj tave umiješati u smjesu sa vrhnjem za kuhanje.'},
+            {korak: '4. - Gotove špagete procijediti i izmješati sa smjesom od vrhnja. '},
+
+        ],
         KratkiOpis: 'Špageti (spaghetti) carbonara klasik su tradicionalne talijanske kuhinje koji naprosto obožavamo! Često se za klasična jela vode polemike oko izvornih namirnica i načina pripreme.',
     },
     {
@@ -55,6 +68,13 @@ export default
             {Naziv: 'Umak za pizzu'},
             {Naziv: 'Šunka 300g'},
             {Naziv: 'Sir 300g'},
+        ],
+        Priprema: [
+            {korak: '1. - Kvasac razmutite u malo tople vode, dodajte šećer i pustite da odstoji oko 5 minuta na toplom mjestu.'},
+            {korak: '2. - Brašnu dodajte sol, ulje, dignuti kvasac te dodajući toplu vodu umijesite mekano tijesto. Pokriveno tijesto ostavite dizati na toplom mjestu dok se volumen ne udvostruči (oko 30 minuta).'},
+            {korak: '3. - Dignuto tijesto razvaljajte na veličinu kalupa (2 okrugla kalupa ili 1 originalni lim iz pećnice).'},
+            {korak: '4. - Tijesto premažite ketchupom i pospite sirom. Po tijestu rasporedite šunku, šampinjone narezane na listiće, papriku narezanu na štapiće i masline.'},
+            {korak: '5. - Pizzu pecite oko 10 minuta na temperaturi od 250 °C.'},
         ],
         KratkiOpis: 'Pizza je vrsta jela koje potječe iz talijanske kuhinje, a koja se sastoji od tankog, najčešće okruglog tijesta premazanog umakom od rajčice, na koje se zatim stavljaju razni dodatci, prije svega sir, a zatim se peče u krušnoj peći.',
     },
@@ -75,6 +95,13 @@ export default
             {Naziv: 'Šunka 300g'},
             {Naziv: 'Sir 300g'},
         ],
+        Priprema: [
+            {korak: '1. - Kvasac razmutite u malo tople vode, dodajte šećer i pustite da odstoji oko 5 minuta na toplom mjestu.'},
+            {korak: '2. - Brašnu dodajte sol, ulje, dignuti kvasac te dodajući toplu vodu umijesite mekano tijesto. Pokriveno tijesto ostavite dizati na toplom mjestu dok se volumen ne udvostruči (oko 30 minuta).'},
+            {korak: '3. - Dignuto tijesto razvaljajte na veličinu kalupa (2 okrugla kalupa ili 1 originalni lim iz pećnice).'},
+            {korak: '4. - Tijesto premažite ketchupom i pospite sirom. Po tijestu rasporedite šunku, šampinjone narezane na listiće, papriku narezanu na štapiće i masline.'},
+            {korak: '5. - Pizzu pecite oko 10 minuta na temperaturi od 250 °C.'},
+        ],
         KratkiOpis: 'Pizza je vrsta jela koje potječe iz talijanske kuhinje, a koja se sastoji od tankog, najčešće okruglog tijesta premazanog umakom od rajčice, na koje se zatim stavljaju razni dodatci, prije svega sir, a zatim se peče u krušnoj peći.',
     },
     {
@@ -93,6 +120,13 @@ export default
             {Naziv: 'Umak za pizzu'},
             {Naziv: 'Šunka 300g'},
             {Naziv: 'Sir 300g'},
+        ],
+        Priprema: [
+            {korak: '1. - Kvasac razmutite u malo tople vode, dodajte šećer i pustite da odstoji oko 5 minuta na toplom mjestu.'},
+            {korak: '2. - Brašnu dodajte sol, ulje, dignuti kvasac te dodajući toplu vodu umijesite mekano tijesto. Pokriveno tijesto ostavite dizati na toplom mjestu dok se volumen ne udvostruči (oko 30 minuta).'},
+            {korak: '3. - Dignuto tijesto razvaljajte na veličinu kalupa (2 okrugla kalupa ili 1 originalni lim iz pećnice).'},
+            {korak: '4. - Tijesto premažite ketchupom i pospite sirom. Po tijestu rasporedite šunku, šampinjone narezane na listiće, papriku narezanu na štapiće i masline.'},
+            {korak: '5. - Pizzu pecite oko 10 minuta na temperaturi od 250 °C.'},
         ],
         KratkiOpis: 'Pizza je vrsta jela koje potječe iz talijanske kuhinje, a koja se sastoji od tankog, najčešće okruglog tijesta premazanog umakom od rajčice, na koje se zatim stavljaju razni dodatci, prije svega sir, a zatim se peče u krušnoj peći.',
     },
