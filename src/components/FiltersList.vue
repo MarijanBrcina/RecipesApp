@@ -4,14 +4,6 @@
   <h3></h3>
   <p href="#" v-for="(filter, index) in filters" :key="index" @click="applyFilter(filter)">{{filter.name}}</p>
   
-
-<!-- <h3 id="h3">Vrsta prehrane</h3>
-  <p>Normalna</p>
-  <p>Veganska</p>
-  <p>Vegeterianska</p>
-  <p>Ketogena</p>
-  <p>Bez glutena</p>
-  <p>Paleo</p> -->
 </div>
 </template>
 

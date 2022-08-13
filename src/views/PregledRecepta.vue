@@ -104,15 +104,6 @@ export default {
 				h3 {
 					color: rgb(0, 0, 0);
 
-					#recipe-rating {
-						display: flex;
-						justify-content: center;
-						border-radius: 10px;
-						font-size: 20px;
-						width: 53px;
-						color: white;
-					}
-
 					span {
 						margin-right: 5px;
 						color: #721818;
@@ -154,5 +145,45 @@ export default {
 			}
 		}
 
+		// #recipe-form {
+		// 	display: flex;
+		// 	flex-direction: column;
+		// 	text-align: left;
+
+		// 	& > div {
+		// 		display: flex;
+		// 		flex-direction: column;
+
+		// 		#recipe-input {
+		// 			display: flex;
+		// 			justify-content: space-between;
+		// 		}
+		// 	}
+
+		// 	.add-recipe {
+		// 		background-color: green;
+		// 		text-align: center;
+		// 		color: white;
+		// 		margin-left: 5px;
+		// 		height: 100%;
+		// 		padding: 2px 10px;
+		// 		font-size: 20px;
+		// 		padding: 1re;
+		// 		align-self: center;
+		// 		cursor: pointer;
+		// 	}
+		// }
+
+		// #update-recipe {
+		// 	background-color: #5eb85e;
+		// 	border: none;
+		// 	padding: 5px;
+		// 	width: 70px;
+		// 	color: white;
+		// 	border-radius: 10px;
+		// 	cursor: pointer;
+		// 	text-transform: uppercase;
+		// 	outline: none;
+		// }
 	}
 </style>

@@ -1,25 +1,155 @@
 <template>
 <div id="navbar1" class="card-shadow">
     <div id="navbar2">
-        <h2>RecipesApp</h2>
-		<button>Dodaj recept</button>
-        <div>
+        <h2 @click="$router.push('/')">RecipesApp</h2>
+		<button @click="showAddRecipe = true" v-if="$route.path==('/')">Dodaj recept</button>
+        <div v-if="$route.path==('/')">
             <input 
 			v-model="search"
 			type="text" 
 			placeholder="Pretraži recepte "/>
+
+			<AddRecipe v-if="showAddRecipe" @close="showAddRecipe = !showAddRecipe" >
+				<template v-slot:header>
+					<h3 class="m-0">Kreiranje novog recepta</h3>
+				</template>
+			
+			<template v-slot:body >
+				<form
+					@submit.prevent="addRecipe"
+					ref="recipeForm"
+					id="recipe-form"
+				>
+					<input
+						required
+						v-model="form.Naziv"
+						type="text"
+						placeholder="Naziv"
+					/>
+					<input
+						required
+						v-model="form.BrMin"
+						type="number"
+						placeholder="Vrijeme"
+					/>
+					<input
+						required
+						v-model="form.BrKalorija"
+						type="number"
+						placeholder="Broj kalorija"
+					/>
+					<input
+						required
+						v-model="form.CijenaNamirnica"
+						type="number"
+						placeholder="Cijena namirnica (Kn)"
+					/>
+					<input
+						required
+						v-model="form.VegePrehrana"
+						type="text"
+						placeholder="Vege recept? (Da ili Ne)"
+					/>
+	
+					<textarea
+						required
+						v-model="form.KratkiOpis"
+						placeholder="Kratki opis recepta"
+						rows="6"
+					/>
+					<input
+						required
+						v-model="form.slika"
+						type="text"
+						placeholder="Slika(URL)"
+					/>
+					<hr />
+					<div>
+						<div id="ingredient-input">
+							<p class="m-0">Sastojci <span @click="addingredient" class="add-ingredient">Dodaj sastojak</span></p>
+						</div>
+
+						<input
+							required
+							v-for="(Sastojci, index) in form.Sastojci"
+							:key="index"
+							v-model="form.Sastojci[index].Naziv"
+							type="text"
+							placeholder="Sastojak"
+						/>
+					</div>
+
+					<hr />
+					<div>
+						<div id="ingredient-input">
+							<p class="m-0">Priprema <span @click="addstep" class="add-ingredient">Dodaj korak</span></p>
+						</div>
+
+						<input
+							required
+							v-for="(Priprema, index) in form.Priprema"
+							:key="index"
+							v-model="form.Priprema[index].korak"
+							type="text"
+							placeholder="Korak"
+						/>
+					</div>
+
+					<hr />
+
+
+				</form>
+			</template>
+			
+			<template v-slot:footer>
+				<button id="add-recipe" @click="$refs.recipeForm.requestSubmit()">
+					Dodaj recept
+				</button>
+			</template>
+			</AddRecipe>
         </div>
     </div>
 </div>
 </template>
 
 <script>
+import AddRecipe from "./AddRecipe";
 export default {
+	components:{
+		AddRecipe,
+	},
 	data(){
 		return{
+			showAddRecipe: false,
+			form: {
+				Naziv: "",
+				BrMin: "",
+				BrKalorija: "",
+				CijenaNamirnica: "",
+				slika: "",
+				VegePrehrana: "",
+				Sastojci: [{ Naziv: ""}],
+				Priprema: [{ korak: ""}],
+				KratkiOpis: "",
+
+			},
 			search: "",
 		};
 	},
+	methods: {
+			addingredient() {
+				this.form.Sastojci.push({ Naziv: "" });
+			},
+			addstep() {
+				this.form.Priprema.push({ korak: "" });
+			},
+			addRecipe(e) {
+				e.preventDefault();
+
+				this.$store.dispatch("addRecipe", this.form);
+				this.showAddRecipe = false;
+			},
+		},
 	watch: {
 		search(){
 			this.$store.dispatch("search", this.search);
@@ -74,6 +204,50 @@ export default {
 			cursor: pointer;
 			margin-left: 850px;
 		}
+
 		}
 	}
+	#recipe-form {
+			display: flex;
+			flex-direction: column;
+			text-align: left;
+
+			& > div {
+				display: flex;
+				flex-direction: column;
+
+				#actor-input {
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+
+			.add-ingredient {
+				background-color: #721818;
+				text-align: center;
+				color: white;
+				margin-left: 5px;
+				height: 100%;
+				padding: 2px 10px;
+				font-size: 13px;
+				border-radius: 10px;
+				padding: 1re;
+				align-self: center;
+				cursor: pointer;
+			}
+		}
+
+		#add-recipe {
+			background-color: #721818;
+			border: none;
+			padding: 5px;
+			height: 50px;
+			width: 150px;
+			color: white;
+			border-radius: 10px;
+			cursor: pointer;
+			text-transform: uppercase;
+			outline: none;
+			margin-left: 180px;
+		}
 </style>
