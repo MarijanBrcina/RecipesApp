@@ -1,6 +1,7 @@
 import recipesList from "@/assets/recipesList"
 const set_search = "set_search"
 const set_filter = "set_filter"
+const add_recipe = "add_recipe"
 
 const state = {
     recipes: recipesList,
@@ -15,7 +16,10 @@ const mutations = {
 
     [set_filter](state, filter) {
         state.filter = filter
-    }
+    },
+    [add_recipe](state, recipe) {
+        state.recipes.push(recipe)
+    },
 }
 
 const actions = {
@@ -25,12 +29,16 @@ const actions = {
 
     filter({commit}, filter){
         commit(set_filter,filter)
-    }
+    },
+    addRecipe({commit, state}, recipe){
+        recipe.id = state.recipes.lenght + 1
+        commit(add_recipe,recipe)
+    },
 }
 
 const getters = {
     getRecipes: state => {
-        //  console.log(state.recipes.filter(recipes => recipes.Naziv.toLowerCase().indexOf(state.search.toLowerCase()) > -1))
+        
         return state.recipes
         .filter(recipes => recipes.Naziv.toLowerCase().indexOf(state.search.toLowerCase()) > -1)
         .sort(compare(state.filter))

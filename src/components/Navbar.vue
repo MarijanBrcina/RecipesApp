@@ -2,7 +2,7 @@
 <div id="navbar1" class="card-shadow">
     <div id="navbar2">
         <h2 @click="$router.push('/')">RecipesApp</h2>
-		<button @click="showAddRecipe = true" v-if="$route.path==('/')">Dodaj recept</button>
+		<button @click="showAddRecipe = true" v-if="$route.path==('/')">Dodaj recept </button>
         <div v-if="$route.path==('/')">
             <input 
 			v-model="search"
@@ -30,7 +30,7 @@
 						required
 						v-model="form.BrMin"
 						type="number"
-						placeholder="Vrijeme"
+						placeholder="Vrijeme(min)"
 					/>
 					<input
 						required
@@ -147,12 +147,12 @@ export default {
 				e.preventDefault();
 
 				this.$store.dispatch("addRecipe", this.form);
-				this.showAddRecipe = false;
 			},
 		},
 	watch: {
 		search(){
 			this.$store.dispatch("search", this.search);
+			this.showAddRecipe = false;
 		}
 	}
 };
