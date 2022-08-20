@@ -20,43 +20,49 @@
 					ref="recipeForm"
 					id="recipe-form"
 				>
+					<div>Naziv recepta: </div>
 					<input
 						required
 						v-model="form.Naziv"
 						type="text"
 						placeholder="Naziv"
 					/>
+					<div>Potrebni broj minuta: </div>
 					<input
 						required
 						v-model="form.BrMin"
 						type="number"
 						placeholder="Vrijeme(min)"
 					/>
+					<div>Broj kalorija: </div>
 					<input
 						required
 						v-model="form.BrKalorija"
 						type="number"
-						placeholder="Broj kalorija"
+						placeholder="Kalorije"
 					/>
+					<div>Cijena pripreme: </div>
 					<input
 						required
 						v-model="form.CijenaNamirnica"
 						type="number"
 						placeholder="Cijena namirnica (Kn)"
 					/>
+					<div>Vege recept?</div>
 					<input
 						required
 						v-model="form.VegePrehrana"
 						type="text"
-						placeholder="Vege recept? (Da ili Ne)"
+						placeholder="(Da ili Ne)"
 					/>
-	
+
+					<div>Kratki opis recepta</div>
 					<textarea
-						required
 						v-model="form.KratkiOpis"
-						placeholder="Kratki opis recepta"
+						placeholder="Opis"
 						rows="6"
 					/>
+					<div>Slika recepta</div>
 					<input
 						required
 						v-model="form.slika"
@@ -147,6 +153,7 @@ export default {
 				e.preventDefault();
 
 				this.$store.dispatch("addRecipe", this.form);
+				this.showAddRecipe = false;
 			},
 		},
 	watch: {
@@ -215,11 +222,6 @@ export default {
 			& > div {
 				display: flex;
 				flex-direction: column;
-
-				#actor-input {
-					display: flex;
-					justify-content: space-between;
-				}
 			}
 
 			.add-ingredient {

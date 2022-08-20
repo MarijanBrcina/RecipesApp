@@ -8,7 +8,7 @@
 		 <span :style="{color: getVeganColor()}"><font-awesome-icon icon="leaf" /></span>
     </div>
     <p>Broj Kalorija: {{recipe.BrKalorija}}</p>
-    <p>Cijena pripreme: {{recipe.CijenaNamirnica}}</p>
+    <p>Cijena pripreme: {{recipe.CijenaNamirnica}} kn</p>
 	<p1>{{recipe.KratkiOpis}}</p1>
   </div>
   </div>

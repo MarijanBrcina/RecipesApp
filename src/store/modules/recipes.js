@@ -2,6 +2,8 @@ import recipesList from "@/assets/recipesList"
 const set_search = "set_search"
 const set_filter = "set_filter"
 const add_recipe = "add_recipe"
+const delete_recipe = "delete_recipe"
+const update_recipe = "update_recipe"
 
 const state = {
     recipes: recipesList,
@@ -20,6 +22,17 @@ const mutations = {
     [add_recipe](state, recipe) {
         state.recipes.push(recipe)
     },
+    [delete_recipe](state, id) {
+        state.recipes.splice(state.recipes.findIndex(recipe => recipe.id === id, 1))
+    },
+    [update_recipe](state, recipe) {
+        state.recipes = state.recipes.map(recipe1 => {
+            if(recipe.id === recipe1.id){
+                return recipe
+            }
+            return recipe1
+        })
+    },
 }
 
 const actions = {
@@ -33,6 +46,12 @@ const actions = {
     addRecipe({commit, state}, recipe){
         recipe.id = state.recipes.lenght + 1
         commit(add_recipe,recipe)
+    },
+    deleteRecipe({commit}, id) {
+        commit(delete_recipe, id)
+    },
+    updateRecipe({commit}, recipe) {
+        commit(update_recipe, recipe)
     },
 }
 

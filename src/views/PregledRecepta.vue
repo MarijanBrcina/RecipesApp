@@ -3,40 +3,151 @@
     <navbar />
 
     <div id="recipe-container">
-        <div id="recipe-img">
-            <img :src="recipe.slika" alt="Slika recepta">
-        </div>
 
     <div id="recipe-info">
         <div>
-            <h1> {{recipe.Naziv}} <span :style="{color: getVeganColor()}"><font-awesome-icon icon="leaf" /></span></h1>
+            <h1> {{recipe.Naziv}} <span :style="{color: getVeganColor()}"><font-awesome-icon icon="leaf" />
 			<div id="options">
-            <button class="edit">Uredi recept</button>
-            <button class="delete">Obriši recept</button>
-        </div>
+            	<button @click="showAddRecipe = true" class="edit">Uredi recept</button>
+            	<button @click="deleteRecipe" class="delete">Obriši recept</button>
+        	</div>
+			</span>
+			</h1>
+			
             <h3>Priprema: <span>{{recipe.BrMin }} minuta <font-awesome-icon icon="stopwatch" /> </span></h3>
             <h3>Broj Kalorija: <span>{{recipe.BrKalorija}}</span></h3>
-            <h3>Cijena pripreme: <span>{{recipe.CijenaNamirnica}}</span></h3>
+            <h3>Cijena pripreme: <span>{{recipe.CijenaNamirnica}} kn</span></h3>
             
             <h3><strong>Kratki opis: </strong><span> {{recipe.KratkiOpis}}</span></h3>
 			<h3>Sastojci: 
                 <br /><span v-for="(sastojak, index) in recipe.Sastojci" :key="index"> <br /> - {{sastojak.Naziv}} </span>
             </h3>
 			<h3>Priprema: 
-                <br /><span v-for="(priprema, index) in recipe.Priprema" :key="index"> <br /> {{priprema.korak}} </span>
+                <br /><span v-for="(priprema, index) in recipe.Priprema" :key="index"> <br /> - {{priprema.korak}} </span>
             </h3>
         </div>
     </div>
+		<div id="recipe-img">
+            <img :src="recipe.slika" alt="Slika recepta">
+    	</div>
     </div>
 </div>
+
+<AddRecipe v-if="showAddRecipe" @close="showAddRecipe = false" >
+				<template v-slot:header>
+					<h3 class="m-0">Uređivanje recepta</h3>
+				</template>
+			
+			<template v-slot:body >
+				<form
+					@submit.prevent="updateRecipe"
+					ref="recipeForm"
+					id="recipe-form"
+				>
+					<div>Naziv recepta: </div>
+					<input
+						required
+						v-model="recipe.Naziv"
+						type="text"
+						placeholder="Naziv"
+					/>
+					<div>Potrebni broj minuta: </div>
+					<input
+						required
+						v-model="recipe.BrMin"
+						type="number"
+						placeholder="Vrijeme(min)"
+					/>
+					<div>Broj kalorija: </div>
+					<input
+						required
+						v-model="recipe.BrKalorija"
+						type="number"
+						placeholder="Kalorije"
+					/>
+					<div>Cijena pripreme: </div>
+					<input
+						required
+						v-model="recipe.CijenaNamirnica"
+						type="number"
+						placeholder="Cijena namirnica (Kn)"
+					/>
+					<div>Vege recept?</div>
+					<input
+						required
+						v-model="recipe.VegePrehrana"
+						type="text"
+						placeholder="(Da ili Ne)"
+					/>
+
+					<div>Kratki opis recepta</div>
+					<textarea
+						v-model="recipe.KratkiOpis"
+						placeholder="Opis"
+						rows="6"
+					/>
+					<div>Slika recepta</div>
+					<input
+						required
+						v-model="recipe.slika"
+						type="text"
+						placeholder="Slika(URL)"
+					/>
+					<hr />
+					<div>
+						<div id="ingredient-input">
+							<p class="m-0">Sastojci <span @click="addingredient" class="add-ingredient">Dodaj sastojak</span></p>
+						</div>
+
+						<input
+							required
+							v-for="(Sastojci, index) in recipe.Sastojci"
+							:key="index"
+							v-model="recipe.Sastojci[index].Naziv"
+							type="text"
+							placeholder="Sastojak"
+						/>
+					</div>
+
+					<hr />
+					<div>
+						<div id="ingredient-input">
+							<p class="m-0">Priprema <span @click="addstep" class="add-ingredient">Dodaj korak</span></p>
+						</div>
+
+						<input
+							required
+							v-for="(Priprema, index) in recipe.Priprema"
+							:key="index"
+							v-model="recipe.Priprema[index].korak"
+							type="text"
+							placeholder="Korak"
+						/>
+					</div>
+
+					<hr />
+
+
+				</form>
+			</template>
+			
+			<template v-slot:footer>
+				<button id="update-recipe" @click="$refs.recipeForm.requestSubmit()">
+					Spremi
+				</button>
+			</template>
+			</AddRecipe>
   
 </template>
 
 <script>
 import Navbar from "../components/Navbar";
+import AddRecipe from "../components/AddRecipe";
+
 export default {
     components: {
         Navbar,
+		AddRecipe,
     },
     props: {
         id: {
@@ -46,6 +157,7 @@ export default {
     },
     data() {
         return {
+			showAddRecipe: false,
             recipe: {},
         };
     },
@@ -56,9 +168,22 @@ export default {
 			
 			return "#909090";
 		},
+		deleteRecipe(){
+			this.$store.dispatch('deleteRecipe', parseInt(this.id))
+			this.$router.push("/");
+		},
+		updateRecipe(){
+			this.$store.dispatch("updateRecipe", this.recipe);
+			this.showAddRecipe = false;
+		},
+		addingredient() {
+			this.recipe.Sastojci.push({ Naziv: "" });
+		},
+		addstep() {
+			this.recipe.Priprema.push({ korak: "" });
+		},
     },
     created(){
-        console.log("ID: ", typeof this.id);
         this.recipe = this.$store.getters.getRecipeWithId(parseInt(this.id));
     }
 };
@@ -78,7 +203,7 @@ export default {
 
 			#recipe-img {
 				flex-grow: 1;
-				min-width: 600px;
+				min-width: 550px;
 
 				img {
 					max-width: 500px;
@@ -92,7 +217,6 @@ export default {
 			#recipe-info {
 				display: flex;
 				flex-grow: 2;
-				text-align: left;
 				flex-direction: column;
 				justify-content: space-between;
 
@@ -104,6 +228,7 @@ export default {
 				h3 {
 					color: rgb(0, 0, 0);
 
+
 					span {
 						margin-right: 5px;
 						color: #721818;
@@ -111,7 +236,7 @@ export default {
 				}
 
 				#options {
-					max-width: 380px;
+					max-width: 1980px;
 					display: flex;
 					justify-content: space-between;
 					margin-top: 1rem;
@@ -143,47 +268,7 @@ export default {
 					}
 				}
 			}
-		}
-
-		// #recipe-form {
-		// 	display: flex;
-		// 	flex-direction: column;
-		// 	text-align: left;
-
-		// 	& > div {
-		// 		display: flex;
-		// 		flex-direction: column;
-
-		// 		#recipe-input {
-		// 			display: flex;
-		// 			justify-content: space-between;
-		// 		}
-		// 	}
-
-		// 	.add-recipe {
-		// 		background-color: green;
-		// 		text-align: center;
-		// 		color: white;
-		// 		margin-left: 5px;
-		// 		height: 100%;
-		// 		padding: 2px 10px;
-		// 		font-size: 20px;
-		// 		padding: 1re;
-		// 		align-self: center;
-		// 		cursor: pointer;
-		// 	}
-		// }
-
-		// #update-recipe {
-		// 	background-color: #5eb85e;
-		// 	border: none;
-		// 	padding: 5px;
-		// 	width: 70px;
-		// 	color: white;
-		// 	border-radius: 10px;
-		// 	cursor: pointer;
-		// 	text-transform: uppercase;
-		// 	outline: none;
-		// }
+		 }	
+			
 	}
 </style>

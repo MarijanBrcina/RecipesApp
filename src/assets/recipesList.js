@@ -5,7 +5,7 @@ export default
         Naziv: 'Pizza Capricciosa',
         BrMin: 30,
         BrKalorija: 130,
-        CijenaNamirnica: '20 kn', 
+        CijenaNamirnica: '20', 
         slika: 'https://www.recetin.com/wp-content/uploads/2015/05/pizza_hawaiana.jpg',
         VegePrehrana: 'Da',
         Sastojci: [
@@ -31,7 +31,7 @@ export default
         Naziv: 'Špageti carbonara',
         BrMin: 25,
         BrKalorija: 80,
-        CijenaNamirnica: '15 kn', 
+        CijenaNamirnica: '15', 
         slika: 'https://www.tportal.hr/media/thumbnail/w1000/716201.jpeg',
         VegePrehrana: 'Da',
         Sastojci: [
@@ -57,7 +57,7 @@ export default
         Naziv: 'Pizza Capricciosa',
         BrMin: 30,
         BrKalorija: 130,
-        CijenaNamirnica: '20 kn', 
+        CijenaNamirnica: '20', 
         VegePrehrana: 'Ne',
         slika: 'https://www.recetin.com/wp-content/uploads/2015/05/pizza_hawaiana.jpg',
         Sastojci: [
@@ -83,7 +83,7 @@ export default
         Naziv: 'Pizza Capricciosa',
         BrMin: 30,
         BrKalorija: 130,
-        CijenaNamirnica: '20 kn', 
+        CijenaNamirnica: '20', 
         VegePrehrana: 'Ne',
         slika: 'https://www.recetin.com/wp-content/uploads/2015/05/pizza_hawaiana.jpg',
         Sastojci: [
@@ -109,7 +109,7 @@ export default
         Naziv: 'Pizza Capricciosa',
         BrMin: 30,
         BrKalorija: 130,
-        CijenaNamirnica: '20 kn',
+        CijenaNamirnica: '20',
         VegePrehrana: 'Da', 
         slika: 'https://www.recetin.com/wp-content/uploads/2015/05/pizza_hawaiana.jpg',
         Sastojci: [
@@ -135,7 +135,7 @@ export default
         Naziv: 'Pizza Capricciosa',
         BrMin: 30,
         BrKalorija: 130,
-        CijenaNamirnica: '20 kn',
+        CijenaNamirnica: '20',
         VegePrehrana: 'Ne', 
         slika: 'https://i.ytimg.com/vi/PCAwJs51D0k/maxresdefault.jpg',
         Sastojci: [
@@ -154,7 +154,7 @@ export default
         Naziv: 'Tiramisu',
         BrMin: 40,
         BrKalorija: 110,
-        CijenaNamirnica: '60 kn', 
+        CijenaNamirnica: '60', 
         slika: 'https://podravkaiovariations.azureedge.net/f10e9ace-631e-11eb-a447-0242ac120017/v/f2b1f6a6-64bc-11eb-b6c2-0242ac130010/1600x1200-f2b21938-64bc-11eb-9498-0242ac130010.webp',
         VegePrehrana: 'Ne',
         VrstaObroka: 'Desert',
@@ -174,7 +174,7 @@ export default
         Naziv: 'Mojito',
         BrMin: 13,
         BrKalorija: 160,
-        CijenaNamirnica: '30 kn', 
+        CijenaNamirnica: '30', 
         slika: 'https://podravkaiovariations.azureedge.net/1abd09ae-610e-11eb-860e-0242ac12001f/v/f2b1f6a6-64bc-11eb-b6c2-0242ac130010/1600x1200-f2b21938-64bc-11eb-9498-0242ac130010.webp',
         VegePrehrana: 'Da',
         VrstaObroka: 'Piće',
