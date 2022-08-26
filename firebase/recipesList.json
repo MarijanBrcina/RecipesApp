@@ -140,6 +140,13 @@
             {"Naziv": "Šunka 300g"},
             {"Naziv": "Sir 300g"}
         ],
+        "Priprema": [
+            {"korak": "1. - Kvasac razmutite u malo tople vode, dodajte šećer i pustite da odstoji oko 5 minuta na toplom mjestu."},
+            {"korak": "2. - Brašnu dodajte sol, ulje, dignuti kvasac te dodajući toplu vodu umijesite mekano tijesto. Pokriveno tijesto ostavite dizati na toplom mjestu dok se volumen ne udvostruči (oko 30 minuta)."},
+            {"korak": "3. - Dignuto tijesto razvaljajte na veličinu kalupa (2 okrugla kalupa ili 1 originalni lim iz pećnice)."},
+            {"korak": "4. - Tijesto premažite ketchupom i pospite sirom. Po tijestu rasporedite šunku, šampinjone narezane na listiće, papriku narezanu na štapiće i masline."},
+            {"korak": "5. - Pizzu pecite oko 10 minuta na temperaturi od 250 °C."}
+        ],
         "KratkiOpis": "Pizza je vrsta jela koje potječe iz talijanske kuhinje, a koja se sastoji od tankog, najčešće okruglog tijesta premazanog umakom od rajčice, na koje se zatim stavljaju razni dodatci, prije svega sir, a zatim se peče u krušnoj peći."
     },
     {
@@ -158,6 +165,13 @@
             {"Naziv": "Šunka 300g"},
             {"Naziv": "Sir 300g"}
         ],
+        "Priprema": [
+            {"korak": "1. - Žumanjke i šećer pjenasto izmiješajte električnom miješalicom te umiješajte 1 žlicu maraschina."},
+            {"korak": "2. - Zatim kremu kuhajte na pari (oko 10 minuta) dok se ne počne zgušnjavati. Kremu ohladite uz miješanje."},
+            {"korak": "3. - Dodajte mascarpone i na kraju lagano umiješajte čvrsti snijeg od bjelanjaka u koji ste dodali vanilin šećer."},
+            {"korak": "4. - Pomiješajte ohlađenu kavu, šećer i 4 žlice maraschina."},
+            {"korak": "5. - Piškote kratko umočite u kavu i položite po dnu posude (25x16 cm)."}
+        ],
         "KratkiOpis": "Tiramisu je talijanski desert s okusom kave. Napravljen je od damskih prstića umočenih u kavu, slojevitih umućenom smjesom jaja, šećera i mascarpone sira, aromatiziran kakaom. Recept je prilagođen mnogim vrstama kolača i drugih slastica."
     },
     {
@@ -175,6 +189,13 @@
             {"Naziv": "Umak za pizzu"},
             {"Naziv": "Šunka 300g"},
             {"Naziv": "Sir 300g"}
+        ],
+        "Priprema": [
+            {"korak": "1. - Žumanjke i šećer pjenasto izmiješajte električnom miješalicom te umiješajte 1 žlicu maraschina."},
+            {"korak": "2. - Zatim kremu kuhajte na pari (oko 10 minuta) dok se ne počne zgušnjavati. Kremu ohladite uz miješanje."},
+            {"korak": "3. - Dodajte mascarpone i na kraju lagano umiješajte čvrsti snijeg od bjelanjaka u koji ste dodali vanilin šećer."},
+            {"korak": "4. - Pomiješajte ohlađenu kavu, šećer i 4 žlice maraschina."},
+            {"korak": "5. - Piškote kratko umočite u kavu i položite po dnu posude (25x16 cm)."}
         ],
         "KratkiOpis": "Mojito je koktel od bijelog kubanskog ruma, soka limete, svježe mente, šećera šećerne trske, soda vode i izlomljenog leda."
     }

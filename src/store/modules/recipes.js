@@ -1,12 +1,14 @@
-import recipesList from "@/assets/recipesList"
+import api from '../../services/api'
+
 const set_search = "set_search"
 const set_filter = "set_filter"
 const add_recipe = "add_recipe"
 const delete_recipe = "delete_recipe"
 const update_recipe = "update_recipe"
+const set_recipes = "set_recipes"
 
 const state = {
-    recipes: recipesList,
+    recipes: [],
     search: '',
     filter: ''
 
@@ -33,6 +35,9 @@ const mutations = {
             return recipe1
         })
     },
+    [set_recipes](state, recipes) {
+        state.recipes = recipes
+    }
 }
 
 const actions = {
@@ -53,6 +58,11 @@ const actions = {
     updateRecipe({commit}, recipe) {
         commit(update_recipe, recipe)
     },
+    fetchRecipes({commit}){
+        api.getRecipes()
+        .then(res=> commit(set_recipes, res))
+        .catch(err => console.log(err))
+    }
 }
 
 const getters = {

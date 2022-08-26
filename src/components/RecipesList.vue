@@ -22,9 +22,9 @@ export default {
 			return this.$store.getters.getRecipes;
 		},
 	},
-	// created () {
-	// 	this.recipes = this.$store.getters.getRecipes;
-	// },
+	created () {
+		this.$store.dispatch("fetchRecipes");
+	},
 };
 </script>
 
