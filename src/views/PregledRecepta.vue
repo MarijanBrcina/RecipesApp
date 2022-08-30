@@ -143,6 +143,7 @@
 <script>
 import Navbar from "../components/Navbar";
 import AddRecipe from "../components/AddRecipe";
+import api from '../services/api';
 
 export default {
     components: {
@@ -151,7 +152,7 @@ export default {
     },
     props: {
         id: {
-            type: Number,
+            type: [String, Number],
             default: null,
         },
     },
@@ -169,8 +170,9 @@ export default {
 			return "#909090";
 		},
 		deleteRecipe(){
-			this.$store.dispatch('deleteRecipe', parseInt(this.id))
-			this.$router.push("/");
+			this.$store
+			.dispatch('deleteRecipe', this.id)
+			.then((res) => this.$router.push("/"));
 		},
 		updateRecipe(){
 			this.$store.dispatch("updateRecipe", this.recipe);
@@ -184,7 +186,15 @@ export default {
 		},
     },
     created(){
-        this.recipe = this.$store.getters.getRecipeWithId(parseInt(this.id));
+        const recipe = this.$store.getters.getRecipeWithId(parseInt(this.id));
+		if(recipe){
+			this.recipe=recipe
+		} else {
+			api
+			.getRecipeWithId(this.id)
+			.then((res) => (this.recipe = res))
+			.catch((err) => console.log(err));
+		}
     }
 };
 </script>

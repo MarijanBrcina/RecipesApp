@@ -8,17 +8,19 @@ const api = {
             return {...doc.data(), id: doc.id}
         })
     },
-    addRecipe: async()=> {
-
+    addRecipe: async(form)=> {
+        const {id} = await db.add(form)
+        return {...form, id}
     },
-    getRecipeWithId: async()=> {
-
+    getRecipeWithId: async(id)=> {
+        const documents = await db.doc(id).get()
+        return {...documents.data(), id}
     },
-    deleteRecipe: async()=> {
-
+    deleteRecipe: async(id)=> {
+        return await db.doc(id).delete()
     },
-    updateRecipe: async()=> {
-
+    updateRecipe: async(form)=> {
+        return await db.doc(form.id).update(form)
     },
 }
 

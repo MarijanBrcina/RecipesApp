@@ -49,14 +49,25 @@ const actions = {
         commit(set_filter,filter)
     },
     addRecipe({commit, state}, recipe){
-        recipe.id = state.recipes.lenght + 1
-        commit(add_recipe,recipe)
+
+        api.addRecipe(recipe)
+        .then(res=> commit(add_recipe, res))
+        .catch(err => console.log(err))
+        
     },
     deleteRecipe({commit}, id) {
-        commit(delete_recipe, id)
+        api.deleteRecipe(id)
+        .then(res=> {
+            commit(delete_recipe, res)
+            return
+        })
+        .catch(err => console.log(err))
     },
     updateRecipe({commit}, recipe) {
-        commit(update_recipe, recipe)
+
+        api.updateRecipe(recipe)
+        .then(res=> commit(update_recipe, res))
+        .catch(err => console.log(err))
     },
     fetchRecipes({commit}){
         api.getRecipes()
