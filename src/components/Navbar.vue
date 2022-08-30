@@ -1,7 +1,8 @@
 <template>
 <div id="navbar1" class="card-shadow">
     <div id="navbar2">
-        <h2 @click="$router.push('/')">RecipesApp</h2>
+        <h2 @click="$router.push('/')">RecipesApp
+		<span><font-awesome-icon icon="home" /> </span></h2>
 		<button @click="showAddRecipe = true" v-if="$route.path==('/')">Dodaj recept </button>
         <div v-if="$route.path==('/')">
             <input 

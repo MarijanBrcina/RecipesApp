@@ -6,12 +6,12 @@
 
     <div id="recipe-info">
         <div>
-            <h1> {{recipe.Naziv}} <span :style="{color: getVeganColor()}"><font-awesome-icon icon="leaf" />
-			<div id="options">
-            	<button @click="showAddRecipe = true" class="edit">Uredi recept</button>
-            	<button @click="deleteRecipe" class="delete">Obriši recept</button>
-        	</div>
-			</span>
+            <h1>
+				<div id="options"> 
+					<button @click="showAddRecipe = true" class="edit">Uredi recept</button>
+				 <span class="vegan" :style="{color: getVeganColor()}">{{recipe.Naziv }} <font-awesome-icon icon="leaf" /> </span>
+				 <button @click="deleteRecipe" class="delete">Obriši recept</button>
+			</div>
 			</h1>
 			
             <h3>Priprema: <span>{{recipe.BrMin }} minuta <font-awesome-icon icon="stopwatch" /> </span></h3>
@@ -167,7 +167,7 @@ export default {
 			if(this.recipe.VegePrehrana == 'Da' ) return "#00e600";
 			if(this.recipe.VegePrehrana == 'da' ) return "#00e600";
 			
-			return "#909090";
+			return "#380606";
 		},
 		deleteRecipe(){
 			this.$store
@@ -212,11 +212,11 @@ export default {
 			padding: 0 1rem;
 
 			#recipe-img {
+				margin-top: 1.5rem;
 				flex-grow: 1;
-				min-width: 550px;
-
+				min-width: 750px;
 				img {
-					max-width: 500px;
+					max-width: 700px;
 					box-shadow: 0 14px 28px rgba(0, 0, 0, 0.473),
 						0 10px 10px rgba(0, 0, 0, 0.473);
 					margin-bottom: 7px;
@@ -246,7 +246,7 @@ export default {
 				}
 
 				#options {
-					max-width: 1980px;
+					max-width: 1000px;
 					display: flex;
 					justify-content: space-between;
 					margin-top: 1rem;

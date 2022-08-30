@@ -1,6 +1,6 @@
 <template>
 <div id="filters">
-  <h2>Filtrirajte recepte:</h2>
+  <h2>Sortiranje recepata:</h2>
   <h3></h3>
   <p href="#" v-for="(filter, index) in filters" :key="index" @click="applyFilter(filter)">{{filter.name}}</p>
   
