@@ -35,7 +35,7 @@
 						type="number"
 						placeholder="Vrijeme(min)"
 					/>
-					<div>Broj kalorija: </div>
+					<div>Broj kalorija(po porciji): </div>
 					<input
 						required
 						v-model="form.BrKalorija"
