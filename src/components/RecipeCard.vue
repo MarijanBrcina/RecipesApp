@@ -7,7 +7,7 @@
         <span>{{recipe.BrMin }} <font-awesome-icon icon="stopwatch" /> </span>
 		 <span :style="{color: getVeganColor()}"><font-awesome-icon icon="leaf" /></span>
     </div>
-    <p>Broj Kalorija: {{recipe.BrKalorija}}</p>
+    <p>Broj kalorija: {{recipe.BrKalorija}} kcal</p>
     <p>Cijena pripreme: {{recipe.CijenaNamirnica}} kn</p>
 	<p1>{{recipe.KratkiOpis}}</p1>
   </div>
