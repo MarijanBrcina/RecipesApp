@@ -3,6 +3,7 @@
     <div id="navbar2">
         <h2 @click="$router.push('/')">RecipesApp
 		<span><font-awesome-icon icon="home" /> </span></h2>
+		<button @click="signOut()">Odjava</button>
 		<button @click="showAddRecipe = true" v-if="$route.path==('/')">Dodaj recept </button>
         <div v-if="$route.path==('/')">
             <input 
@@ -121,6 +122,8 @@
 
 <script>
 import AddRecipe from "./AddRecipe";
+import firebase from '@/services/firebase';
+
 export default {
 	components:{
 		AddRecipe,
@@ -155,6 +158,13 @@ export default {
 
 				this.$store.dispatch("addRecipe", this.form);
 				this.showAddRecipe = false;
+			},
+			signOut(){
+				firebase.auth().signOut()
+				.then(()=> {
+					this.$router.replace({name: 'Login'});
+				}
+				)
 			},
 		},
 	watch: {
@@ -210,7 +220,8 @@ export default {
 			border-radius: 10px;
 			outline: none;
 			cursor: pointer;
-			margin-left: 850px;
+			margin-left: 370px;
+			
 		}
 
 		}

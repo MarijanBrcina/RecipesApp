@@ -1,6 +1,40 @@
 <template>
   <router-view/>
 </template>
+<script>
+import firebase from '@/services/firebase';
+import recipes from '@/store/modules/recipes';
+import router from '@/router';
+
+firebase.auth().onAuthStateChanged((user) => {
+	const currentRoute = router.currentRoute;
+
+  if (user) {
+    // User is signed in.
+	console.log("***", user.email);
+	recipes.currentUser = user.email;
+	if(router.name !=='home'){
+		router.push({ name: 'home'});
+	 }
+  } else{
+	console.log("*** NO user")
+	recipes.currentUser = null;
+	
+	if(router.name !=='Login'){
+		router.push({ name: 'Login'});
+	 }
+  }
+});
+export default{
+	name: 'app',
+	data(){
+		return{
+			
+		}
+	}
+}
+</script>
+
 
 <style lang="scss">
 	body {

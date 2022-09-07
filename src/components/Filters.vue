@@ -20,7 +20,7 @@ export default {
 		flex-direction: column;
 		padding: 40px;
 		min-height: 100vh;
-		min-width: 285px;
+		min-width: 378px;
 		max-width: 150px;
 		flex-grow: 1;
 		background-color: #B65F5F;

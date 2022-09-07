@@ -13,16 +13,19 @@
         <input type="password" id="Password" placeholder="Lozinka" v-model="password">
         <label for="Password">Lozinka</label>    
       </div> 
-      <p>Niste registrirani?  <a href="#" @click="signup">Registriraj se</a></p>
+      <p>Niste registrirani?  <a href="#" @click.prevent="signup">Registriraj se</a></p>
       <div class="button-area">
-        <button class="btn btn-primary pull-right" @click="login()" >Prijava</button>
+        <button type="button" class="btn btn-primary pull-right" @click="login()" >Prijava</button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import firebase from '@/services/firebase';
+
 export default {
+  name: "login",
   data() {
     return {
       email: "",
@@ -42,6 +45,19 @@ export default {
 				name: "Signup"
 			});
 		},
+    login(){
+      firebase
+      .auth()
+      .signInWithEmailAndPassword(this.email, this.password)
+      .then((result) => {
+        console.log('Uspješna prijava', result);
+
+        this.$router.replace({ name: 'home'});
+      })
+      .catch(function(e){
+        console.error('Greška', e);
+      })
+    }
   }
 };
 </script>
