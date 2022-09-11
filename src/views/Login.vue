@@ -56,6 +56,7 @@ export default {
       })
       .catch(function(e){
         console.error('Greška', e);
+        alert("Email i/ili lozinka nisu točni, pokušajte ponovo. ");
       })
     }
   }

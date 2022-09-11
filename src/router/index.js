@@ -40,8 +40,10 @@ const router = createRouter({
 router.beforeEach((to, from, next) => { 
 console.log("stara ruta", from.name, "nova ruta", to.name, "korisnik", recipes.currentUser)
 
+//Provjerava je li imamo usera
 const noUser = recipes.currentUser === null;
 
+//Ako nemamo usera a sljedeca routa zahtijeva usera idi na login
 if(noUser && to.meta.potrebnaPrijava) {
   next('login');
 } else {

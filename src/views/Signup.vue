@@ -62,6 +62,7 @@ export default {
 			});
 		},
     signup(){
+      if( this.password == this.password2) {
       firebase
       .auth()
       .createUserWithEmailAndPassword(this.email, this.password)
@@ -72,7 +73,11 @@ export default {
       })
       .catch(function(error) {
         console.error('Došlo je do greške, error');
+        alert("Lozinka mora imati minimalno 6 znakova!");
       });
+      }else{
+        alert("Lozinka i ponovljena lozinka se ne podudaraju, pokušajte ponovo.");
+      }
     }
   }
 };
