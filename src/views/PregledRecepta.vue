@@ -15,7 +15,7 @@
 			</h1>
 			
             <h3>Priprema: <span>{{recipe.BrMin }} minuta <font-awesome-icon icon="stopwatch" /> </span></h3>
-            <h3>Broj Kalorija: <span>{{recipe.BrKalorija}}</span></h3>
+            <h3>Broj Kalorija: <span>{{recipe.BrKalorija}} kcal</span></h3>
             <h3>Cijena pripreme: <span>{{recipe.CijenaNamirnica}} kn</span></h3>
             
             <h3><strong>Kratki opis: </strong><span> {{recipe.KratkiOpis}}</span></h3>
